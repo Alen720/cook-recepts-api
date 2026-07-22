@@ -15,10 +15,10 @@ body {
 #container {
   max-width: 1000px;
   margin: 0 auto;
-
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 25px;
 }
 
@@ -26,13 +26,10 @@ body {
 .recept {
   width: 300px;
   min-height: 220px;
-
   background: white;
   border-radius: 20px;
   padding: 25px;
-
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-
   transition: 0.3s;
 }
 
@@ -41,7 +38,6 @@ body {
   color: #e85d04;
   font-size: 24px;
   margin-bottom: 15px;
-
   word-break: break-word;
 }
 
@@ -50,8 +46,6 @@ body {
   color: #444;
   font-size: 16px;
   line-height: 1.6;
-
   white-space: pre-wrap;
   word-break: break-word;
 }
-

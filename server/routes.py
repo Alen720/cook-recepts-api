@@ -19,7 +19,7 @@ def get_recepts(db: Session = Depends(get_db)):
 
     return recepts_db
 
-@route.post("/get_recepts", response_model=ResponseRecept)
+@route.post("/new_recepts", response_model=ResponseRecept)
 def new_recepts(add_recept: CreateRecept, db: Session = Depends(get_db)):
     new_recept = Recept(title=add_recept.title, recept=add_recept.recept)
 
@@ -28,3 +28,9 @@ def new_recepts(add_recept: CreateRecept, db: Session = Depends(get_db)):
     db.refresh(new_recept)
 
     return new_recept
+
+@route.get("/get_recept/{id}", response_model=ResponseRecept)
+def id_recept(id: int, db: Session = Depends(get_db)):
+    recept = db.query(Recept).filter(Recept.id == id).first()
+
+    return recept
